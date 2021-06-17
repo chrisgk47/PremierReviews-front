@@ -1,0 +1,95 @@
+.body {
+    /* display: flex; */
+    width: 80%;
+    text-align: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+h1.welcome{
+    font-size: 54px;
+    color: white;
+}
+
+/* userheaders */
+.umain-header {
+    background: radial-gradient(rgb(112, 109, 109), #111); 
+    padding: 30px;
+    height: 200px;
+    text-align: center;
+    margin: auto;
+  }
+  /* header logo */
+  .upremier-logo {
+    float: left;
+    height: 150px;
+    animation: rotation 5s infinite linear;
+  }
+  .uabout-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .up-logo {
+    height: 40px;
+    width: 40px;
+  }
+  .ugithub-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .umedium-logo {
+    height: 50px;
+    width: 50px;
+  }
+  .ulinkedin-logo {
+    height: 50px;
+    width: 50px;
+  }
+ 
+  /* ul Nav */
+  ul.uNav-ul {
+    display: flex;
+    float: left;
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 80%;
+  }
+  
+  li {
+    /* background-color: rgb(255, 255, 255);
+    opacity: 0.2; */
+    border-radius: 10px;
+    position: relative;
+    width: 100px;
+    text-align: center;
+    object-fit: contain;
+    top: 20px;
+    left: 0px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  li:hover{
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+  }
+  
+  a {
+    top: 0px;
+    color: rgb(255, 255, 255);
+    width: 150px;
+    max-width: 50%;
+    text-decoration: none;
+    margin-left: 10%;
+    font-size: 30px;
+    margin: 18px;
+    right: 200px;
+    object-fit: contain;
+  }
+  
+  
+  

@@ -1,0 +1,213 @@
+.App {
+  background: radial-gradient(rgb(112, 109, 109), #111); 
+  height: 340vh;
+}
+/* Animations*/
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(400%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(359deg);
+  }
+}
+
+/* Header container div */
+.main-header {
+  /* padding: 50px 50px 10px 50px; */
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+}
+/* header logo */
+.premier-logo {
+  float: left;
+  height: 200px;
+  animation: rotation 5s infinite linear;
+}
+
+/* header h1 */
+h1.header-title {
+  position: relative;
+  top: 10px;
+  left: 70px;
+  font-size: 82px;
+  width: 1200px; 
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 rgb(54, 3, 61),
+  0 3px 0 rgb(58, 56, 56), 0 4px 0 rgb(105, 102, 102),
+  0 5px 0 rgb(68, 68, 68), 0 6px 0 #ccc,
+  0 7px 0 rgb(87, 83, 83), 0 8px 0 rgb(41, 3, 63),
+  0 9px 0 rgb(56, 54, 54), 0 10px 0 #ccc,
+  0 11px 0 rgb(36, 34, 34), 0 12px 0 #ccc,
+  0 20px 30px rgba(0, 0, 0, 0.5);
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ul Nav */
+ul.Nav-ul {
+  display: flex;
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  list-style-type: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 90%;
+}
+
+li {
+  /* background-color: rgb(255, 255, 255);
+  opacity: 0.2; */
+  border-radius: 10px;
+  position: relative;
+  width: 80px;
+  text-align: center;
+  object-fit: contain;
+  top: 0px;
+  left: 80px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+li:hover{
+  -moz-box-shadow: 0 0 10px #ccc;
+  -webkit-box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc;
+}
+
+a {
+  top: 0px;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  max-width: 100%;
+  text-decoration: none;
+  margin-left: 10%;
+  font-size: 30px;
+  margin: 18px;
+  right: 200px;
+  object-fit: contain;
+}
+
+
+.about-logo {
+  height: 50px;
+  width: 50px;
+}
+.home-logo {
+  height: 50px;
+  width: 50px;
+}
+.github-logo {
+  height: 50px;
+  width: 50px;
+}
+.medium-logo {
+  height: 50px;
+  width: 50px;
+}
+.linkedin-logo {
+  height: 50px;
+  width: 50px;
+}
+.teams-logo{
+  height: 65px;
+  width: 65px;
+}
+.Body-Links {
+  text-align: center;
+}
+h1.body-title{
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+.hideForm {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* FORMS */
+form.login-form {
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 700px;
+}
+
+form.signup-form {
+  position: relative;
+  width: 350px;
+  height: 300px;
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  /* font-size: 100px; */
+  background-color: rgb(68, 41, 39);
+  color: white;
+}
+::placeholder {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  text-align: center;
+}
+button.hideForm {
+  color: #efefef;
+  width: 400px;
+  height: 70px;
+  font-size: 40px;
+  /* left: 400px;
+  position: relative; */
+  background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+}
+button.Login-Btn{
+  max-width: 50%;
+  width: 400px;
+  color: white;
+  background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+}
+.Signup-Btn {
+  width: 320px;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(53, 25, 25);;
+}
+
+.Alt {
+  font-size: 30px;
+}
+
+.Alt a {
+  color: rgb(255, 255, 255);
+}
+
+h1.signup-title {
+  text-align: center;
+  color: #efefef;
+}
+h1.login-title {
+  text-align: center;
+  color: #efefef;
+}
