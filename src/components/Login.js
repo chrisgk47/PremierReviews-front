@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import Header from './Header'
-import Nav from 'react-bootstrap/Nav'
+// import Nav from 'react-bootstrap/Nav'
 import axios from 'axios'
 
 export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, errors, setErrors}){
     const [formData, setFormData] = useState({username: "", email: "", password: ""})
     const [display, setDisplay] = useState(false)
     const history = useHistory()
-    const errorList = errors.length > 0 ? <ul>{errors.map(error => <li>{error}</li>)}</ul> : null
+
     
     function handleChange(event){
         const { name, value } = event.target

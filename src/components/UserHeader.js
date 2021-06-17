@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import './User.css'
 
-const UserHeader = (loggedInStatus, handleLogout, history) => {
+const UserHeader = (user, loggedInStatus, handleLogout, history) => {
 
     const handleClick = () => {
         axios.delete('http://localhost:3001/logout', { withCredentials: true })

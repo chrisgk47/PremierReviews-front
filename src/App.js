@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect, useHistory } from 'react-router-dom'
+import { Switch, Route, useHistory } from 'react-router-dom'
 import Login from './components/Login'
 import UserPage from './components/UserPage'
 import Signup from './components/Signup'
@@ -11,7 +11,7 @@ import TeamDetails from './components/TeamDetails'
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
-  const [searchUser, setSearchUSer] = useState({})
+  // const [searchUser, setSearchUSer] = useState({})
   const [errors, setErrors] = useState([])
   const history = useHistory()
   const appD = useRef(null)
@@ -24,7 +24,7 @@ export default function App() {
     .then(res => {
       if (res.data.logged_in){
         setIsLoggedIn(true)
-        setUser(res.data.user)
+        setUser(res.data.user.user)
         console.log(res.data.user)
       } else {
         setIsLoggedIn(false)
@@ -33,16 +33,15 @@ export default function App() {
     })
   }
 
-
   function handleLogout(){
     setIsLoggedIn(false)
     setUser({})
   }
 
-  useEffect((id) => {
-    fetch(`http://localhost:3001/users/${id}`)
-    .then(res => console.log(res))
-  }, [])
+  // useEffect((id) => {
+  //   fetch(`http://localhost:3001/users/${id}`)
+  //   .then(res => console.log(res))
+  // }, [])
 
   return (
     <div className="App" ref={appD}>
@@ -60,6 +59,7 @@ export default function App() {
               />
           </Route>
           <Route exact path='/user'>
+            
               <UserPage
                   user={user}
                   setUser={setUser}
