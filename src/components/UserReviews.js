@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
-
+import './User.css'
 export default function UserReviews({teams, user}){
-    const history = useHistory()
     const [reviews, setReviews] = useState([])
-    // const [updatedReviews, setUpdatedReviews] = useState([])
+    // const [formData, setFormData] = useState({title: "", description: "", likes: review.id, author: user.email})
 
     useEffect(() => {
         setReviews(user.reviews)
@@ -16,8 +14,6 @@ export default function UserReviews({teams, user}){
     }
     
     function handleDelete(review){
-        // const updatedReviews = reviews.filter((item) => item !== review )
-        console.log(review)
         releaseReview(review)
         fetch(`http://localhost:3001/reviews/${review.id}`, {
                 method: "DELETE",
@@ -31,6 +27,46 @@ export default function UserReviews({teams, user}){
             })
     }
 
+    // function handleChange(event){
+    //     const { name, value } = event.target
+    //     setFormData({ ...formData, [name]: value })
+    // }
+
+    // function handleSubmit(event){
+    //     event.preventDefault()
+    //     const { title, description } = formData
+
+    //     let newReview = {
+    //         title: title,
+    //         description: description,
+    //         likes: 0,
+    //         author: user.email,
+    //         team_id: location.state.params.id,
+    //         user_id: user.id
+    //     }
+
+    //     fetch(`http://localhost:3001/reviews/${review.id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Accepts': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(newReview)
+    //     })
+    //     .then(res => {reviews.push(res.data)})
+    // }
+
+    function editReview(review){
+        fetch(`http://localhost:3001/reviews/${review.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Accepts': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+    }
+
     return (
         <div className="userReview" >
             {reviews.map(review => (
@@ -39,6 +75,7 @@ export default function UserReviews({teams, user}){
                         <h2 className="title"><u>{review.title}</u></h2>
                         <p className="description">{review.description}</p>
                         <h3 className="likes">{review.likes} Likes</h3>
+                        <h3 className="author">By: {review.author}</h3>
                  </div>
             ))}
         </div>

@@ -39,16 +39,199 @@
 }
 
 /* Team Detail Page */
+.teamDetail {
+    margin-left: auto;
+    margin-right: auto;
+}
+.column {
+    max-width: 50%;
+    padding: 20px;
+    width: 50%;
+    float: left; 
+    height: 164vh;
+    overflow-x: scroll;
+    overflow-y: scroll; 
+    overflow: scroll;
+    background: radial-gradient(rgb(112, 109, 109), #111);
+    -webkit-scrollbar: hidden;
+}
+.review-cont{
+    position: relative;
+    top: 200px;
+}
+
 .teamDetailLogo {
-    text-align: center;
+    position: relative;
     margin-right: auto;
     margin-left: auto;
+    text-align: center;
+    left: 15vw;
+    top: 100px;
 }
 h1.team-name {
-
+    position: relative;
+    text-align: center;
+    top: 100px;
+    color: #efefef;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 rgb(38, 6, 43),
+    0 20px 30px rgb(254, 253, 255);
+}
+button.hideReviewForm {
+    border-radius: 20px;
+    position: relative;
+    color: #efefef;
+    background-color:rgb(38, 6, 43);
+    top: 100px;
+    height: 50px;
+    font-size: 25px;
+    width: 270px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.teamData {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-row-gap: 11rem;
+    grid-column-gap: 10rem;
+}
+.team-reviews {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    color: #efefef;
+    overflow: scroll;
+    max-height: 1000px;
 }
 .teamReviewsCont {
+    /* display: inline-grid; */
+    text-align: center;
+    /* border: 5px solid #efefef; */
+}
+.reviewCont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-row-gap: 11rem;
+    grid-column-gap: 10rem;
+    color: white;
+}
+.reviews{
+    display:inline-grid;
+}
+.reviewForm{
+    display: inline-grid;
+    color: white;
+    font-size: 100px;
+    position: relative;
+    top: 200px;
+    height: 400px;
+}
+form.reviewForm {
+    position: relative;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+}
+input.title{
+    color: white;
+    font-size: 20px;
+    background-color: rgb(38, 6, 43);
+    width: 100%;
+}
+input.description {
     margin-right: auto;
     margin-left: auto;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(38, 6, 43);
+    width: 100%;
+    height: 200px;
+}
+button.submitReviewBtn{
+    border-radius: 20px;
+    width: 100%;
+    font-size: 30px;
+    color: #efefef;
+    background-color:rgb(59, 7, 66);
+}
+p.description {
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+}
+h1.label {
+    width: 100%;
     text-align: center;
 }
+.likesCont{
+    display: table;
+}
+h3.likes{
+    width: 10%;
+    display: inline-table;
+}
+button.like-btn{
+    border-radius: 20px;
+    text-align: center;
+    display: inline-table;
+    width: 5%;
+    background: transparent;
+    cursor: pointer;
+}
+button.dislike-btn{
+    border-radius: 20px;
+    text-align: center;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 5%;
+    background: transparent;
+    cursor: pointer;
+}
+
+button.teamDReviewHide{
+    border-radius: 20px;
+    color: #efefef;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    left: 38%;
+    top: 100px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48));
+}
+
+form.reviewForm{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+h1.ReviewTitle {
+    color: #efefef;
+    font-size: 50px;
+    text-align: center;
+}
+/* .apiCont{
+    display: grid;
+    overflow: scroll;
+    text-align: center;
+    width: 100%;
+    padding: 100px 10px;
+    height: 1000px;
+}
+.apiCard{
+    display: inline-grid;
+    background: radial-gradient(rgb(112, 109, 109), #111); 
+    border: 1px solid rgb(198, 183, 202);
+    animation: fadeIn linear 4s;
+  -webkit-animation: fadeIn linear 7s;
+} */
+/* img.jersey{
+    height: 200px;
+    width: 200px;
+} */

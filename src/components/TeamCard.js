@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-export default function TeamCard({team}){
+export default function TeamCard({team, loggedInStatus, isLoggedIn, user}){
     const history = useHistory()
 
     function handleTeamClick(){

@@ -90,6 +90,47 @@ h1.welcome{
     right: 200px;
     object-fit: contain;
   }
+
+  /* hide display teams and user reviews */
+
+  button.hideTeams {
+    border-radius: 20px;
+    left: 0px;
+    color: #efefef;
+    width: 400px;
+    height: 70px;
+    font-size: 40px;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+  }
+  button.hideReviews {
+    border-radius: 20px;
+    color: #efefef;
+    width: 400px;
+    height: 70px;
+    font-size: 40px;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48));
+  }
+
+  .userReview {
+    display: grid;
+    overflow: scroll;
+    text-align: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-row-gap: 5rem;
+    grid-column-gap: 5rem;
+    width: 100%;
+    padding: 100px 10px;
+    height: 1000px;
+    color: #efefef;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 rgb(183, 166, 185),
+    0 20px 30px rgb(109, 33, 141);
+  }
+  .reviewCard {
+    border: 5px solid #dbcae2;
+    height: 400px;
+    font-size: 14px;
+    overflow: scroll;
+  }
   
   
   

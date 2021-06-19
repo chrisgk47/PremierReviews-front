@@ -1,6 +1,6 @@
 .App {
   background: radial-gradient(rgb(112, 109, 109), #111); 
-  height: 340vh;
+  height: 190vh;
 }
 /* Animations*/
 @keyframes slideInFromLeft {
@@ -156,14 +156,20 @@ form.login-form {
 }
 
 form.signup-form {
-  position: relative;
-  width: 350px;
-  height: 300px;
+  font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  height: 700px;;
+}
+button.Signup-Btn {
+  border-radius: 20px;
 }
 
 input {
   width: 400px;
   height: 50px;
+  border-radius: 20px;
   /* font-size: 100px; */
   background-color: rgb(68, 41, 39);
   color: white;
@@ -174,6 +180,7 @@ input {
   text-align: center;
 }
 button.hideForm {
+  border-radius: 20px;
   color: #efefef;
   width: 400px;
   height: 70px;
@@ -183,6 +190,7 @@ button.hideForm {
   background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
 }
 button.Login-Btn{
+  border-radius: 20px;
   max-width: 50%;
   width: 400px;
   color: white;
@@ -210,4 +218,16 @@ h1.signup-title {
 h1.login-title {
   text-align: center;
   color: #efefef;
+}
+.aboutMain {
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+p.leagueInfo {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  top: 50px;
 }

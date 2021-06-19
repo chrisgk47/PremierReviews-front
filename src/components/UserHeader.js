@@ -20,7 +20,7 @@ const UserHeader = (user, loggedInStatus, handleLogout, history) => {
                 <img className="upremier-logo" src='https://b.thumbs.redditmedia.com/ZvZBvQ9kg21R8OcRKt0K8hsusgoqMHGtdQ6pCDKj1ok.png' alt="logo"/>
             </a> 
                 <ul className="uNav-ul">
-                    <li className="uAbout-Link">
+                    {/* <li className="uAbout-Link">
                         <a href="http://localhost:3000/about">
                             <img
                                 className="uabout-logo"
@@ -28,7 +28,7 @@ const UserHeader = (user, loggedInStatus, handleLogout, history) => {
                                 alt="about"
                             />
                         </a>
-                    </li>
+                    </li> */}
                     {/* <li className="teams-link">
                         <a href="http://localhost:3000/teams">
                             <img

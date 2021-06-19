@@ -1,9 +1,6 @@
-import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import UserHeader from './UserHeader'
 import Teams from './Teams'
-import TeamCard from './TeamCard'
 import UserReviews from './UserReviews'
 import './User.css'
 export default function UserPage(user, setUser, isLoggedIn, setIsLoggedIn, loggedInStatus, handleLogout){
@@ -11,26 +8,34 @@ export default function UserPage(user, setUser, isLoggedIn, setIsLoggedIn, logge
     const [teams, setTeams] = useState([])
     // const [reviews, setReviews] = useState([])
     const [display, setDisplay] = useState(false)
-    const [teamDisplay, setTeamDisplay] = useState(false)
+    const [teamDisplay, setTeamDisplay] = useState(true)
     // console.log(user.user.reviews)
+
+    // const [apiData, setApiData] = useState([])
+    // const [jerseys, setJerseys] = useState([])
+
+    // useEffect(() => {
+    //     fetch('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League')
+    //     .then(res => res.json())
+    //     .then(res => setApiData(res.teams))
+    // }, [])
+    
+    // useEffect(() => {
+    //     setJerseys(apiData.map(team => team.strTeamJersey))
+    // }, [ console.log(jerseys)])
+   
+    
     useEffect(() => {
         fetch('http://localhost:3001/teams')
         .then(res => res.json())
         .then(setTeams)
     }, [])
-  
-    // useEffect(() => {
-        // fetch('http://localhost:3001/reviews')
-        // .then(res => res.json())
-        // .then(setReviews)
-    //     setReviews(user.user.reviews)
-    // }, [])
-
-    
+    //hide user reviews
     function handleHide(){
         let newBoolean = !display
         setDisplay(newBoolean)
     }
+    //hide teams user page
     function handleHideT(){
         let newBoolean = !teamDisplay
         setTeamDisplay(newBoolean)
@@ -54,10 +59,18 @@ export default function UserPage(user, setUser, isLoggedIn, setIsLoggedIn, logge
                         <UserReviews  
                             user={user.user}
                             teams={teams}
+                            isLoggedIn={isLoggedIn}
                             loggedInStatus={loggedInStatus}
                         />
                 </div>
                      : null}
+                {/* <div className="apiCont">
+                    <div className="apiCard">
+                        {jerseys.map(link => {
+                            return <img className="jersey" src={link} alt="jersey"/>
+                        })}
+                    </div>
+                </div> */}
             </div>
         </div>
     )

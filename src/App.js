@@ -1,34 +1,31 @@
 import axios from "axios";
-import { useState, useEffect, useRef } from "react";
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { useState, useRef } from "react";
+import { Switch, Route } from 'react-router-dom'
 import Login from './components/Login'
 import UserPage from './components/UserPage'
 import Signup from './components/Signup'
 import Teams from './components/Teams'
 import TeamDetails from './components/TeamDetails'
-
+import About from './components/About'
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   // const [searchUser, setSearchUSer] = useState({})
   const [errors, setErrors] = useState([])
-  const history = useHistory()
   const appD = useRef(null)
   const url = "http://localhost:3001"
 
   
-  
   function loginStatus(){
     axios.get('http://localhost:3001/logged_in', {withCredentials: true})
     .then(res => {
-      if (res.data.logged_in){
-        setIsLoggedIn(true)
-        setUser(res.data.user.user)
+      if (res.errors){
+        setErrors(res.errors)
         console.log(res.data.user)
       } else {
-        setIsLoggedIn(false)
-        setUser({})
+        setIsLoggedIn(true)
+        setUser(res.data.user.user)
       }
     })
   }
@@ -55,35 +52,57 @@ export default function App() {
                 errors={errors} 
                 setErrors={setErrors}
                 isLoggedIn={isLoggedIn}
+                loginStatus={loginStatus}
+                setIsLoggedIn={setIsLoggedIn}
+              />
+          </Route>
+          <Route exact path='/about'>
+              <About
+                user={user} 
+                setUser={setUser}
+                url={url} 
+                errors={errors} 
+                setErrors={setErrors}
+                loginStatus={loginStatus}
+                isLoggedIn={isLoggedIn}
                 setIsLoggedIn={setIsLoggedIn}
               />
           </Route>
           <Route exact path='/user'>
-            
+            {/* {isLoggedIn && */}
               <UserPage
                   user={user}
                   setUser={setUser}
-                  loggedInStatus={isLoggedIn}
+                  loginStatus={loginStatus}
                   isLoggedIn={isLoggedIn}
                   setIsLoggedIn={setIsLoggedIn}
                   errors={errors}
                   setErrors={setErrors}
                   handleLogout={handleLogout}
               />
+              {/* } */}
           </Route>
           <Route exact path='/signup'>
               <Signup
-                  url={url}
-                  errors={errors}
+                  user={user} 
+                  setUser={setUser}
+                  url={url} 
+                  errors={errors} 
                   setErrors={setErrors}
+                  isLoggedIn={isLoggedIn}
+                  loginStatus={loginStatus}
+                  setIsLoggedIn={setIsLoggedIn}
               />
           </Route>
           <Route exact path='/teams'>
+          {/* {isLoggedIn && */}
               <Teams  
                   url={url}
               />
+              {/* } */}
           </Route>
           <Route exact path="/teams/:id">
+          {/* {isLoggedIn && */}
               <TeamDetails
                   user={user}
                   setUser={setUser}
@@ -91,6 +110,7 @@ export default function App() {
                   isLoggedIn={isLoggedIn}
                   setIsLoggedIn={setIsLoggedIn}
               />
+              {/* } */}
           </Route>
          
          

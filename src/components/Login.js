@@ -12,7 +12,7 @@ export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, er
     
     function handleChange(event){
         const { name, value } = event.target
-        setFormData({...formData, [name]: value})
+        setFormData({ ...formData, [name]: value })
     }
 
     function handleSubmit(e){
@@ -29,9 +29,10 @@ export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, er
         .then(res => {
             if(res.data.logged_in){
                 setIsLoggedIn(true)
+                console.log(res.data)
                 console.log(res.data.user)
                 setUser(res.data.user)
-                localStorage.setItem('User', res.data.user)
+                localStorage.setItem('User', res.data)
                 redirect()
             } else {
                 setErrors(res.data.errors)
