@@ -27,34 +27,6 @@ export default function UserReviews({teams, user}){
             })
     }
 
-    // function handleChange(event){
-    //     const { name, value } = event.target
-    //     setFormData({ ...formData, [name]: value })
-    // }
-
-    // function handleSubmit(event){
-    //     event.preventDefault()
-    //     const { title, description } = formData
-
-    //     let newReview = {
-    //         title: title,
-    //         description: description,
-    //         likes: 0,
-    //         author: user.email,
-    //         team_id: location.state.params.id,
-    //         user_id: user.id
-    //     }
-
-    //     fetch(`http://localhost:3001/reviews/${review.id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Accepts': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(newReview)
-    //     })
-    //     .then(res => {reviews.push(res.data)})
-    // }
 
     function editReview(review){
         fetch(`http://localhost:3001/reviews/${review.id}`, {

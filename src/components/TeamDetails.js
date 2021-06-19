@@ -17,6 +17,9 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     // const reviews = location.state.params.reviews
    
     useEffect(() => {
+        // fetch('http://localhost:3001/reviews')
+        // .then(res => res.json())
+        // .then(setReviews(location.state.params.reviews))
         setReviews(location.state.params.reviews)
     }, [])
 
@@ -51,20 +54,20 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
         })
     }
 
-    function addLikes(review){
-        console.log(review)
-        fetch(`http://localhost:3001/reviews/${review.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Accepts': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({likes: review.likes + 1})
-        })
-        .then(res => res.json())
-        .then(console.log)
+    // function addLikes(review){
+    //     console.log(review)
+    //     fetch(`http://localhost:3001/reviews/${review.id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'Accepts': 'application/json',
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({likes: review.likes + 1})
+    //     })
+    //     .then(res => res.json())
+    //     .then(console.log)
 
-    }
+    // }
 
     
     return(
@@ -78,7 +81,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                     {display ? 
                 <div className="review-cont">
                         {reviews.map((review) => (
-                            <TeamReviews key={review.id} review={review} addLikes={addLikes}/>
+                            <TeamReviews key={review.id} review={review} reviews={reviews} setReviews={setReviews}/>
                             ))}
                 </div>
                 : null}
@@ -109,7 +112,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                         </button>
                     </form>
                     <div className="api">
-                           
+                           hi
                     </div>
                 </div>
             </div>
