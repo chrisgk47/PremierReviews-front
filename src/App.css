@@ -1,6 +1,6 @@
 .App {
   background: radial-gradient(rgb(112, 109, 109), #111); 
-  height: 190vh;
+  height: 220vh;
 }
 /* Animations*/
 @keyframes slideInFromLeft {
@@ -76,7 +76,7 @@ ul.Nav-ul {
   max-width: 90%;
 }
 
-li {
+li.uGithub-Link.uMedium-Link.uLinkedIn-Link  {
   /* background-color: rgb(255, 255, 255);
   opacity: 0.2; */
   border-radius: 10px;
@@ -89,7 +89,7 @@ li {
   max-width: 100%;
   margin: 0 auto;
 }
-li:hover{
+li.uGithub-Link.uMedium-Link.uLinkedIn-Link :hover{
   -moz-box-shadow: 0 0 10px #ccc;
   -webkit-box-shadow: 0 0 10px #ccc;
   box-shadow: 0 0 10px #ccc;

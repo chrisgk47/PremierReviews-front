@@ -6,12 +6,13 @@ import axios from 'axios'
 
 export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     const location = useLocation()
+    console.log(location.state.params.youtube)
     // console.log(location.state.params)
     console.log(user)
     const [reviews, setReviews] = useState([])
     const [display, setDisplay] = useState(true)
     const [formData, setFormData] = useState({title: "", description: "", likes: 0, author: ""})
-  
+    const [pdisplay, setPDisplay] = useState(true)
 
     // console.log(location.state.params)
     // const reviews = location.state.params.reviews
@@ -26,6 +27,10 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     function handleHide(){
         let newBoolean = !display
         setDisplay(newBoolean)
+    }
+    function handleHideD(){
+        let newBoolean = !pdisplay
+        setPDisplay(newBoolean)
     }
 
     function handleChange(event){
@@ -50,8 +55,8 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
         .then(res => {
             console.log(res.data)
             reviews.push(res.data)
-            
         })
+        event.target.reset()
     }
 
     // function addLikes(review){
@@ -73,11 +78,26 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     return(
         <div className="teamDetail" key={location.state.params.id}>
             <UserHeader />
+            <div className="banner">
+                <img className="teamBanner" src={location.state.params.banner} alt={location.state.params.name}/>
+            </div>
             <div className="column">
-              
-                <img className="teamDetailLogo" src={location.state.params.image} alt={location.state.params.name}/>
+                {/* <img className="teamDetailLogo" src={location.state.params.image} alt={location.state.params.name}/> */}
                 <h1 className="team-name">{location.state.params.name}</h1>
-                    <button className="teamDReviewHide" onClick={handleHide}>Reviews</button>
+                <h3 className="stadium"><u>Stadium:</u> {location.state.params.stadium}</h3>
+                <br/>
+                <a className="website" href={`http://${location.state.params.website}`}>Official Website</a>
+                <a className="youtube" href={`http://${location.state.params.youtube}`}>Youtube</a>
+                <img className="jersey" src={location.state.params.jersey} alt={location.state.params.name}/>
+               <div className="descriptionDiv">
+                   <br/>
+                <button className="descriptionHide" onClick={handleHideD}>Show/Hide Description</button>
+                        {pdisplay ? 
+                    <p className="teamDescription">{location.state.params.description}</p> : null}
+               </div>
+            </div>
+            <div className="column">
+                <button className="teamDReviewHide" onClick={handleHide}>Reviews</button>
                     {display ? 
                 <div className="review-cont">
                         {reviews.map((review) => (
@@ -85,8 +105,6 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                             ))}
                 </div>
                 : null}
-            </div>
-            <div className="column">
                 <div className="reviewFormCont">
                     <h1 className="ReviewTitle"><u>Review Form</u></h1>
                     <br/>
@@ -112,7 +130,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                         </button>
                     </form>
                     <div className="api">
-                           hi
+                           
                     </div>
                 </div>
             </div>

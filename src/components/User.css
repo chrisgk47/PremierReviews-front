@@ -92,7 +92,11 @@ h1.welcome{
   }
 
   /* hide display teams and user reviews */
-
+.user-container {
+  position: relative;
+  top: 200px;
+  height: 190vh;
+}
   button.hideTeams {
     border-radius: 20px;
     left: 0px;
@@ -121,6 +125,7 @@ h1.welcome{
     width: 100%;
     padding: 100px 10px;
     height: 1000px;
+    max-height: 700px;
     color: #efefef;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 rgb(183, 166, 185),
     0 20px 30px rgb(109, 33, 141);
@@ -132,5 +137,45 @@ h1.welcome{
     overflow: scroll;
   }
   
+  button.hideMatches {
+    border-radius: 20px;
+    left: 0px;
+    color: #efefef;
+    width: 400px;
+    height: 70px;
+    font-size: 40px;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+  }
+  .matches{
+    color: white;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-row-gap: 5rem;
+    grid-column-gap: 5rem;
+    width: 100%;
+    overflow-x: scroll;
+    /* position: relative; */
+  }
+  .events {
+    border: 10px solid rgb(144, 34, 196);
+    background: rgb(59, 23, 75);
+    top: 20px;
+    font-size: 20px;
+    /* overflow: scroll; */
+    color: #efefef;
+    position: relative;
+  }
+  img.matchimg {
+    max-height: 250px;
+    max-width: 300px;
+  }
   
+  img.jersey {
+    max-height: 300px;
+    max-width: 250px;
+    position: relative;
+    top: 10px;
+    left: 100px;
+    text-align: center;
+  }
   

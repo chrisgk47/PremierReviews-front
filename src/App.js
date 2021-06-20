@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Switch, Route } from 'react-router-dom'
 import Login from './components/Login'
 import UserPage from './components/UserPage'
@@ -7,11 +7,12 @@ import Signup from './components/Signup'
 import Teams from './components/Teams'
 import TeamDetails from './components/TeamDetails'
 import About from './components/About'
+// import Header from './components/Header'
+// import UserHeader from './components/UserHeader'
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [user, setUser] = useState({})
-  // const [searchUser, setSearchUSer] = useState({})
   const [errors, setErrors] = useState([])
   const appD = useRef(null)
   const url = "http://localhost:3001"
@@ -35,13 +36,16 @@ export default function App() {
     setUser({})
   }
 
-  // useEffect((id) => {
-  //   fetch(`http://localhost:3001/users/${id}`)
-  //   .then(res => console.log(res))
-  // }, [])
-
   return (
     <div className="App" ref={appD}>
+      {/* {isLoggedIn ? 
+        <div className="userheader-cont">
+          <UserHeader />
+        </div> : 
+        <div className="header-cont">
+          <Header />
+        </div>} */}
+       
       <div className="main">
         <Switch>
           <Route exact path='/'>

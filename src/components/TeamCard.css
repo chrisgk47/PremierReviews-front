@@ -23,13 +23,15 @@
     display: inline-grid;
     background: radial-gradient(rgb(112, 109, 109), #111); 
     border: 1px solid rgb(198, 183, 202);
-    animation: fadeIn linear 4s;
-  -webkit-animation: fadeIn linear 7s;
+    animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 3s;
 }
 
 .teamLogo {
     margin-right: auto;
     margin-left: auto;
+    max-height: 250px;
+    max-width: 250px;
 }
 .teamName{
     color: #e7ccf0;
@@ -45,6 +47,8 @@
 }
 .column {
     max-width: 50%;
+    margin-right: auto;
+    margin-left: auto;
     padding: 20px;
     width: 50%;
     float: left; 
@@ -61,20 +65,45 @@
 }
 
 .teamDetailLogo {
-    position: relative;
+    /* position: relative; */
+    max-height: 250px;
+    max-width: 250px;
+    text-align: center;
+    /* left: 15vw;
+    top: 100px; */
+}
+.banner {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    left: 15vw;
-    top: 100px;
 }
+.teamBanner {
+    width: 100%;
+}
+
 h1.team-name {
-    position: relative;
-    text-align: center;
     top: 100px;
     color: #efefef;
     text-shadow: 0 1px 0 #ccc, 0 2px 0 rgb(38, 6, 43),
     0 20px 30px rgb(254, 253, 255);
+}
+p.teamDescription {
+    display: grid;
+    color: #dad6d6;
+    font-size: 20px;
+    height: 10%;
+}
+h3.stadium {
+    color: #c5a0c3;
+}
+button.descriptionHide {
+    border-radius: 20px;
+    background-color:rgb(34, 5, 48);
+    color: #efefef;
+}
+
+a.youtube {
+    color:rgb(119, 56, 146);
 }
 button.hideReviewForm {
     border-radius: 20px;
@@ -120,19 +149,30 @@ button.hideReviewForm {
 .reviews{
     display:inline-grid;
 }
-.reviewForm{
+/* .reviewForm{
     display: inline-grid;
     color: white;
     font-size: 100px;
     position: relative;
+    overflow-wrap: break-word;
+    top: 200px;
+    height: 400px;
+} */
+.reviewFormCont {
+    display: inline-grid;
+    color: white;
+    font-size: 100px;
+    position: relative;
+    overflow-wrap: break-word;
     top: 200px;
     height: 400px;
 }
 form.reviewForm {
+    display: inline-grid;
     position: relative;
     top: 0px;
     text-align: center;
-    width: 100%;
+    width: 500px;
 }
 input.title{
     color: white;
@@ -141,13 +181,14 @@ input.title{
     width: 100%;
 }
 input.description {
-    margin-right: auto;
-    margin-left: auto;
+    /* margin-right: auto;
+    margin-left: auto; */
     color: white;
     font-size: 20px;
     background-color: rgb(38, 6, 43);
     width: 100%;
     height: 200px;
+    overflow-wrap: break-word;
 }
 button.submitReviewBtn{
     border-radius: 20px;
@@ -216,22 +257,4 @@ h1.ReviewTitle {
     font-size: 50px;
     text-align: center;
 }
-/* .apiCont{
-    display: grid;
-    overflow: scroll;
-    text-align: center;
-    width: 100%;
-    padding: 100px 10px;
-    height: 1000px;
-}
-.apiCard{
-    display: inline-grid;
-    background: radial-gradient(rgb(112, 109, 109), #111); 
-    border: 1px solid rgb(198, 183, 202);
-    animation: fadeIn linear 4s;
-  -webkit-animation: fadeIn linear 7s;
-} */
-/* img.jersey{
-    height: 200px;
-    width: 200px;
-} */
+
