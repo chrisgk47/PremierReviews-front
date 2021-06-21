@@ -4,18 +4,11 @@ const Header = (props) => {
      
     return(
         <div className="main-header">
-            <img className="premier-logo" src='https://b.thumbs.redditmedia.com/ZvZBvQ9kg21R8OcRKt0K8hsusgoqMHGtdQ6pCDKj1ok.png' alt="logo"/>
+            <a href='http://localhost:3000/'>
+                <img className="premier-logo" src='https://b.thumbs.redditmedia.com/ZvZBvQ9kg21R8OcRKt0K8hsusgoqMHGtdQ6pCDKj1ok.png' alt="logo"/>
+            </a>
              <h1 className="header-title">Premier League Reviews</h1>
                 <ul className="Nav-ul">
-                    <li className="Home-Link">
-                        <a href='http://localhost:3000/'>
-                            <img
-                                className="home-logo"
-                                src='https://cdn.iconscout.com/icon/premium/png-256-thumb/house-2672402-2216607.png'
-                                alt="home"
-                            />
-                        </a> 
-                    </li>
                     <li className="About-Link">
                         <a href="http://localhost:3000/about">
                             <img

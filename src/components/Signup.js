@@ -95,7 +95,7 @@ export default function Signup({user, setUser, setIsLoggedIn, isLoggedIn, errors
                 </button>
                 <div className='Alt'>
                     <br></br>
-                    or <Link to='/login'>Login</Link>
+                    or <Link to='/'>Login</Link>
                 </div>
                 </form> 
                 <div className="errors">

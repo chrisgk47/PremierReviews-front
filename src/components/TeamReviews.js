@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import React from 'react'
 import './TeamCard.css'
-export default function TeamReviews(props){
-    const [updatedReview, setUpdatedReview] = useState([])   
-    // const [reviews, setReviews] = useState([])
-   
 
+
+export default function TeamReviews(props){
+ 
+   
     function addLikes(){
         fetch(`http://localhost:3001/reviews/${props.review.id}`, {
             method: 'PATCH',
@@ -31,17 +31,11 @@ export default function TeamReviews(props){
         .then(json => props.setReviews(props.reviews.map((r) => (r.id === props.review.id ? json : r))))
     }
 
-    function filterReviews(){
-        fetch('http://localhost:3001/reviews')
-        .then(res => res.json())
-        .then(console.log)
-    }
     return (
-        <div className="teamReviewsCont">
-            <br/>
+        <div className="teamReviewsCont"><br/>
             <div className="reviewCont">
                 <div className="reviews" key={props.review.id}>
-                ------------------------------------------------------------------------------------------------
+                    ------------------------------------------------------------------------------------------------
                     <h2 className="title"><u>{props.review.title}</u></h2>
                     <p className="description">{props.review.description}</p>
                     <div className="likesCont">

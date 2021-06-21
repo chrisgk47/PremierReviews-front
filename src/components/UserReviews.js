@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import './User.css'
-export default function UserReviews({teams, user}){
+
+export default function UserReviews(props){
     const [userReviews, setUserReviews] = useState([])
-    // const [formData, setFormData] = useState({title: "", description: "", likes: review.id, author: user.email})
 
     useEffect(() => {
-        setUserReviews(user.reviews)
-    }, [])
+        setUserReviews(props.user.reviews)
+    }, [props.user.reviews])
 
     const releaseReview = (userReview) => {
         setUserReviews(userReviews.filter((r) => r !== userReview))
@@ -14,16 +14,17 @@ export default function UserReviews({teams, user}){
     
     function handleDelete(userReview){
         releaseReview(userReview)
+
         fetch(`http://localhost:3001/reviews/${userReview.id}`, {
                 method: "DELETE",
                 headers: {
                     'Accepts': 'application/json',
                     'Content-Type': 'application/json'
                 }
-            })
-            .then(() => {
-                userReviews.filter(r => r !== userReview)
-            })
+        })
+        .then(() => {
+            userReviews.filter(r => r !== userReview)
+        })
     }
 
     return (

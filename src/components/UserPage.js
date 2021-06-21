@@ -4,8 +4,8 @@ import Teams from './Teams'
 import UserReviews from './UserReviews'
 import './User.css'
 
-export default function UserPage(user, setUser, isLoggedIn, setIsLoggedIn, loggedInStatus, handleLogout){
-    console.log(user.user)
+export default function UserPage(props){
+    
     const [teams, setTeams] = useState([])
     const [matches, setMatches] = useState([])
     const [display, setDisplay] = useState(false)
@@ -39,53 +39,45 @@ export default function UserPage(user, setUser, isLoggedIn, setIsLoggedIn, logge
         let newBoolean = !matchDisplay
         setMatchDisplay(newBoolean)
     }
-    console.log(matches)
+   
     return (
         <div className="user-container">
-            <UserHeader user={user} loggedInStatus={loggedInStatus} handleLogout={handleLogout}/>
+            <UserHeader user={props.user} handleLogout={props.handleLogout}/>
             <div className="body">
-                <h1 className="welcome">Welcome <u>{user.user.username}</u></h1>
+                <h1 className="welcome">Welcome <u>{props.user.username}</u></h1>
                 <button className="hideMatches" onClick={handleHideE}>Matches</button>
                 {matchDisplay ?
-                <div className="matches">
-                    {matches.map(match => {
-                    return <div className="events">
-                        <img className="matchimg" src={match.image} alt="match"/>
-                        <h1 className="game">🏟{match.game1}🏟</h1>
-                        <h2 className="season">Season: {match.season}</h2>
-                        <h2 className="date">Match Date: 📆{match.date}</h2>
-                        <h2 className="home">Home Team: {match.home}</h2>
-                        <h2 className="away">Away Team: {match.away}</h2>
-                        <h3 className="score">⚽️Home: {match.home_score} ⚽️Away: {match.away_score}</h3>
+                    <div className="matches">
+                        {matches.map(match => {
+                        return <div className="events" key={match.id}>
+                            <img className="matchimg" src={match.image} alt="match"/>
+                            <h1 className="game">🏟{match.game1}🏟</h1>
+                            <h2 className="season">Season: {match.season}</h2>
+                            <h2 className="date">Match Date: 📆{match.date}</h2>
+                            <h2 className="home">Home Team: {match.home}</h2>
+                            <h2 className="away">Away Team: {match.away}</h2>
+                            <h3 className="score">⚽️Home: {match.home_score} ⚽️Away: {match.away_score}</h3>
+                        </div>
+                        })} 
                     </div>
-                    })} 
-                </div>
                 : null}
                 <button className="hideTeams" onClick={handleHideT}>Teams</button>
                 { teamDisplay ?
-                <div className="teams">
-                    <Teams teams={teams} user={user} loggedInStatus={loggedInStatus}/>
-                </div>
+                    <div className="teams">
+                        <Teams teams={teams} user={props.user} />
+                    </div>
                 : null}
 
                 <button className="hideReviews" onClick={handleHide}>My Reviews</button>
                 { display ?
-                <div className="myReviews">
-                        <UserReviews  
-                            user={user.user}
-                            teams={teams}
-                            isLoggedIn={isLoggedIn}
-                            loggedInStatus={loggedInStatus}
-                        />
-                </div>
-                     : null}
-                {/* <div className="apiCont">
-                    <div className="apiCard">
-                        {jerseys.map(link => {
-                            return <img className="jersey" src={link} alt="jersey"/>
-                        })}
+                    <div className="myReviews">
+                            <UserReviews  
+                                user={props.user}
+                                teams={teams}
+                                isLoggedIn={props.isLoggedIn}
+                            />
                     </div>
-                </div> */}
+                : null}
             </div>
         </div>
     )

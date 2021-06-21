@@ -1,17 +1,19 @@
 import React from 'react'
 import TeamCard from './TeamCard'
 import './TeamCard.css'
-export default function Team(teams, user, loggedInStatus, isLoggedIn){
+
+
+export default function Team(props){
    
     return (
         <div className="team-cont">
-            {teams.teams.map((team) => (
+            {props.teams.map((team) => (
                 <TeamCard 
                     key={team.id}
                     team={team}
-                    user={user}
-                    loggedInStatus={loggedInStatus}
-                    isLoggedIn={isLoggedIn}
+                    user={props.user}
+                    loginStatus={props.loginStatus}
+                    isLoggedIn={props.isLoggedIn}
                 />
             ))}
         </div>

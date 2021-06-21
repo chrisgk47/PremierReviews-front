@@ -6,23 +6,16 @@ import axios from 'axios'
 
 export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     const location = useLocation()
-    console.log(location.state.params.youtube)
-    // console.log(location.state.params)
     console.log(user)
     const [reviews, setReviews] = useState([])
     const [display, setDisplay] = useState(true)
     const [formData, setFormData] = useState({title: "", description: "", likes: 0, author: ""})
     const [pdisplay, setPDisplay] = useState(true)
 
-    // console.log(location.state.params)
-    // const reviews = location.state.params.reviews
    
     useEffect(() => {
-        // fetch('http://localhost:3001/reviews')
-        // .then(res => res.json())
-        // .then(setReviews(location.state.params.reviews))
         setReviews(location.state.params.reviews)
-    }, [])
+    }, [location.state.params.reviews])
 
     function handleHide(){
         let newBoolean = !display
@@ -54,55 +47,41 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
         axios.post(`http://localhost:3001/reviews`, { review })
         .then(res => {
             console.log(res.data)
+            console.log(event.target)
             reviews.push(res.data)
         })
         event.target.reset()
     }
-
-    // function addLikes(review){
-    //     console.log(review)
-    //     fetch(`http://localhost:3001/reviews/${review.id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Accepts': 'application/json',
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({likes: review.likes + 1})
-    //     })
-    //     .then(res => res.json())
-    //     .then(console.log)
-
-    // }
-
-    
+  
     return(
         <div className="teamDetail" key={location.state.params.id}>
             <UserHeader />
             <div className="banner">
-                <img className="teamBanner" src={location.state.params.banner} alt={location.state.params.name}/>
+                <a href={`http://${location.state.params.website}`}>
+                    <img className="teamBanner" src={location.state.params.banner} alt={location.state.params.name}/>
+                </a>
             </div>
             <div className="column">
-                {/* <img className="teamDetailLogo" src={location.state.params.image} alt={location.state.params.name}/> */}
                 <h1 className="team-name">{location.state.params.name}</h1>
-                <h3 className="stadium"><u>Stadium:</u> {location.state.params.stadium}</h3>
-                <br/>
-                <a className="website" href={`http://${location.state.params.website}`}>Official Website</a>
+                <h3 className="stadium"><u>Stadium:</u> {location.state.params.stadium}</h3><br/>
                 <a className="youtube" href={`http://${location.state.params.youtube}`}>Youtube</a>
-                <img className="jersey" src={location.state.params.jersey} alt={location.state.params.name}/>
-               <div className="descriptionDiv">
-                   <br/>
-                <button className="descriptionHide" onClick={handleHideD}>Show/Hide Description</button>
-                        {pdisplay ? 
+                <br/><br/>
+                <a className="jerseyshop" href={`https://www.uksoccershop.com/football-shirts/english-premier-league?gclid=CjwKCAjwq7aGBhADEiwA6uGZp-0Ys3K_zYVEhqzUgKjTMOeX01e3_PEz1BqjpH0JhpU0ST9wpju-vBoCedsQAvD_BwE`}>
+                    <img className="jersey" src={location.state.params.jersey} alt={location.state.params.name}/>
+                </a>
+               <div className="descriptionDiv"><br/>
+                <button className="descriptionHide" onClick={handleHideD}>Show/Hide Description</button><br/><br/>
+                    {pdisplay ? 
                     <p className="teamDescription">{location.state.params.description}</p> : null}
                </div>
             </div>
             <div className="column">
                 <button className="teamDReviewHide" onClick={handleHide}>Reviews</button>
-                    {display ? 
+                {display ? 
                 <div className="review-cont">
-                        {reviews.map((review) => (
-                            <TeamReviews key={review.id} review={review} reviews={reviews} setReviews={setReviews}/>
-                            ))}
+                    {reviews.map((review) => (
+                        <TeamReviews key={review.id} review={review} reviews={reviews} setReviews={setReviews}/>
+                        ))}
                 </div>
                 : null}
                 <div className="reviewFormCont">
@@ -129,9 +108,6 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                             Submit Review
                         </button>
                     </form>
-                    <div className="api">
-                           
-                    </div>
                 </div>
             </div>
         </div>

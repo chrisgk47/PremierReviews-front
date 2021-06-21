@@ -3,28 +3,34 @@
     100% { opacity: 1;}
 }
 
-
-
-/* .teams {
-    
-} */
 .team-cont {
+    position: relative;
+    top: -80px;
     display: grid;
     overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     row-gap: 10rem;
     column-gap: 10rem;
     width: 100%;
-    padding: 100px 10px;
     height: 1000px;
+}
+u {
+    color: #3d195b;
+    text-shadow: 0 1px 0 #3d195b, 2px 2px 0 #efefef,
+    0 20px 30px rgb(237, 227, 241);
 }
 .teamCard {
     display: inline-grid;
+    position: relative;
+    top: 40px;
     background: radial-gradient(rgb(112, 109, 109), #111); 
     border: 1px solid rgb(198, 183, 202);
     animation: fadeIn linear 2s;
   -webkit-animation: fadeIn linear 3s;
+  background: url('https://uploads-ssl.webflow.com/5d24abb8489f207db52f0e4c/5db94b555d7548acc43b3559_Premier_League_Hero.jpg');
 }
 
 .teamLogo {
@@ -44,6 +50,8 @@
 .teamDetail {
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    top: 200px;
 }
 .column {
     max-width: 50%;
@@ -52,6 +60,8 @@
     padding: 20px;
     width: 50%;
     float: left; 
+    position: relative;
+    top: -170px;
     height: 164vh;
     overflow-x: scroll;
     overflow-y: scroll; 
@@ -65,12 +75,9 @@
 }
 
 .teamDetailLogo {
-    /* position: relative; */
     max-height: 250px;
     max-width: 250px;
     text-align: center;
-    /* left: 15vw;
-    top: 100px; */
 }
 .banner {
     margin-right: auto;
@@ -79,6 +86,9 @@
 }
 .teamBanner {
     width: 100%;
+    position: relative;
+    left: -10px;
+    top: -170px;
 }
 
 h1.team-name {
@@ -91,6 +101,8 @@ p.teamDescription {
     display: grid;
     color: #dad6d6;
     font-size: 20px;
+    /* width: 90%; */
+    text-align: center;
     height: 10%;
 }
 h3.stadium {
@@ -258,3 +270,6 @@ h1.ReviewTitle {
     text-align: center;
 }
 
+button.teamDetBtn {
+    font-size: 15px;
+}

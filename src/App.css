@@ -1,6 +1,7 @@
 .App {
   background: radial-gradient(rgb(112, 109, 109), #111); 
   height: 220vh;
+  max-height: 220vh;
 }
 /* Animations*/
 @keyframes slideInFromLeft {
@@ -33,7 +34,7 @@
 /* Header container div */
 .main-header {
   /* padding: 50px 50px 10px 50px; */
-  padding: 40px;
+  padding: 80px;
   text-align: center;
   margin: auto;
 }
@@ -171,7 +172,7 @@ input {
   height: 50px;
   border-radius: 20px;
   /* font-size: 100px; */
-  background-color: rgb(68, 41, 39);
+  background-color: #3d195b;
   color: white;
 }
 ::placeholder {
@@ -230,4 +231,15 @@ p.leagueInfo {
   text-align: center;
   position: relative;
   top: 50px;
+}
+.vid {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+iframe.vid{
+  position: relative;
+  top: 70px;
+  height: 500px;
+  width: 70%;
 }

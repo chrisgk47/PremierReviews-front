@@ -1,15 +1,12 @@
 import { useState } from 'react'
 import { useHistory, Link } from 'react-router-dom'
 import Header from './Header'
-// import Nav from 'react-bootstrap/Nav'
 import axios from 'axios'
 
 export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, errors, setErrors}){
     const [formData, setFormData] = useState({username: "", email: "", password: ""})
-    const [display, setDisplay] = useState(false)
     const history = useHistory()
 
-    
     function handleChange(event){
         const { name, value } = event.target
         setFormData({ ...formData, [name]: value })
@@ -29,8 +26,6 @@ export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, er
         .then(res => {
             if(res.data.logged_in){
                 setIsLoggedIn(true)
-                console.log(res.data)
-                console.log(res.data.user)
                 setUser(res.data.user)
                 localStorage.setItem('User', res.data)
                 redirect()
@@ -57,18 +52,11 @@ export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, er
         )
     }
 
-    function handleHide(){
-        let newBoolean = !display
-        setDisplay(newBoolean)
-    }
-
     return (
         <div className="form-cont">
             <Header />
             <div className="Body-Links">
                 <h1 className="body-title">Welcome, Please Login or Signup</h1>
-                <button className="hideForm" onClick={handleHide}>Log In / Signup</button>
-                { display ?  
                 <form align="center" className="login-form" onSubmit={handleSubmit}>
                 <br></br><br></br>
                 <input
@@ -103,7 +91,7 @@ export default function Login({user, setUser, url, setIsLoggedIn, isLoggedIn, er
                     or <Link to='/signup'>Sign Up</Link>
                 </div>
                 </form> 
-                : null}
+                {/* : null} */}
                 <div className="errors">
                     {errors ? handleErrors() : null}
                 </div>

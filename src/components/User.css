@@ -1,5 +1,5 @@
 .body {
-    /* display: flex; */
+    position: relative;
     width: 80%;
     text-align: center;
     flex-wrap: wrap;
@@ -10,6 +10,8 @@
 h1.welcome{
     font-size: 54px;
     color: white;
+    position: relative;
+    top: -150px;
 }
 
 /* userheaders */
@@ -18,6 +20,8 @@ h1.welcome{
     padding: 30px;
     height: 200px;
     text-align: center;
+    position: relative;
+    top: -180px;
     margin: auto;
   }
   /* header logo */
@@ -99,23 +103,42 @@ h1.welcome{
 }
   button.hideTeams {
     border-radius: 20px;
+    position: relative;
+    top: -100px;
     left: 0px;
     color: #efefef;
-    width: 400px;
-    height: 70px;
-    font-size: 40px;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
     background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
   }
+
   button.hideReviews {
+    position: relative;
+    top: -100px;
+    left: 50px;
     border-radius: 20px;
     color: #efefef;
-    width: 400px;
-    height: 70px;
-    font-size: 40px;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
     background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48));
   }
-
+  
+  button.hideMatches {
+    position: relative;
+    top: -100px;
+    border-radius: 20px;
+    right: 50px;
+    color: #efefef;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+  }
   .userReview {
+    position: relative;
+    top: -60px;
     display: grid;
     overflow: scroll;
     text-align: center;
@@ -123,7 +146,6 @@ h1.welcome{
     grid-row-gap: 5rem;
     grid-column-gap: 5rem;
     width: 100%;
-    padding: 100px 10px;
     height: 1000px;
     max-height: 700px;
     color: #efefef;
@@ -134,34 +156,30 @@ h1.welcome{
     border: 5px solid #dbcae2;
     height: 400px;
     font-size: 14px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   
-  button.hideMatches {
-    border-radius: 20px;
-    left: 0px;
-    color: #efefef;
-    width: 400px;
-    height: 70px;
-    font-size: 40px;
-    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
-  }
   .matches{
+    position: relative;
+    top: -100px;
     color: white;
     display: flex;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-row-gap: 5rem;
     grid-column-gap: 5rem;
     width: 100%;
+    height: 550px;
+    overflow: scroll;
     overflow-x: scroll;
-    /* position: relative; */
+    overflow-y: hidden;
   }
   .events {
     border: 10px solid rgb(144, 34, 196);
-    background: rgb(59, 23, 75);
-    top: 20px;
+    background:#3d195b;
+    top: 0px;
+    height: 500px;
     font-size: 20px;
-    /* overflow: scroll; */
     color: #efefef;
     position: relative;
   }
@@ -174,8 +192,19 @@ h1.welcome{
     max-height: 300px;
     max-width: 250px;
     position: relative;
-    top: 10px;
-    left: 100px;
-    text-align: center;
   }
+
+  h1.game {
+    font-size: 20px;
+  }
+  h2.date {
+    font-size: 20px;
+  }
+  h2.home {
+    font-size: 20px;
+  }
+  h2.away {
+    font-size: 20px;
+  }
+  
   
