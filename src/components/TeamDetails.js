@@ -63,7 +63,11 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
             </div>
             <div className="column">
                 <h1 className="team-name">{location.state.params.name}</h1>
-                <h3 className="stadium"><u>Stadium:</u> {location.state.params.stadium}</h3><br/>
+                <a className="stadium" href={`${location.state.params.stadium_img}/preview`} ><u>Stadium:</u> {location.state.params.stadium}
+                    <div className="stadium_img">
+                        <img className="stadiumImg" src={location.state.params.stadium_img} />
+                    </div>
+                </a><br/><br/>
                 <a className="youtube" href={`http://${location.state.params.youtube}`}>Youtube</a>
                 <br/><br/>
                 <a className="jerseyshop" href={`https://www.uksoccershop.com/football-shirts/english-premier-league?gclid=CjwKCAjwq7aGBhADEiwA6uGZp-0Ys3K_zYVEhqzUgKjTMOeX01e3_PEz1BqjpH0JhpU0ST9wpju-vBoCedsQAvD_BwE`}>

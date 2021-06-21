@@ -20,24 +20,6 @@ const UserHeader = (user, loggedInStatus, handleLogout, history) => {
                 <img className="upremier-logo" src='https://b.thumbs.redditmedia.com/ZvZBvQ9kg21R8OcRKt0K8hsusgoqMHGtdQ6pCDKj1ok.png' alt="logo"/>
             </a> 
                 <ul className="uNav-ul">
-                    {/* <li className="uAbout-Link">
-                        <a href="http://localhost:3000/about">
-                            <img
-                                className="uabout-logo"
-                                src='https://cdn.iconscout.com/icon/premium/png-256-thumb/contact-book-128-980494.png'
-                                alt="about"
-                            />
-                        </a>
-                    </li> */}
-                    {/* <li className="teams-link">
-                        <a href="http://localhost:3000/teams">
-                            <img
-                                className="teams-logo"
-                                src='https://cdn.iconscout.com/icon/free/png-256/the-premier-league-569440.png'
-                                alt="teams"
-                            />
-                        </a>
-                    </li> */}
                     <li className="uGithub-Link">
                         <a href='https://github.com/chrisgk47/Premier-Reviews-Front'>
                             <img

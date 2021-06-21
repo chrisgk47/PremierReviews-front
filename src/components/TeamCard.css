@@ -17,7 +17,7 @@
     width: 100%;
     height: 1000px;
 }
-u {
+u.username {
     color: #3d195b;
     text-shadow: 0 1px 0 #3d195b, 2px 2px 0 #efefef,
     0 20px 30px rgb(237, 227, 241);
@@ -161,21 +161,16 @@ button.hideReviewForm {
 .reviews{
     display:inline-grid;
 }
-/* .reviewForm{
-    display: inline-grid;
-    color: white;
-    font-size: 100px;
-    position: relative;
-    overflow-wrap: break-word;
-    top: 200px;
-    height: 400px;
-} */
+
 .reviewFormCont {
-    display: inline-grid;
+    /* display: inline-grid; */
     color: white;
     font-size: 100px;
     position: relative;
     overflow-wrap: break-word;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
     top: 200px;
     height: 400px;
 }
@@ -272,4 +267,16 @@ h1.ReviewTitle {
 
 button.teamDetBtn {
     font-size: 15px;
+}
+
+a.stadium>div {
+    display: none;
+    pointer-events: none;
+}
+a.stadium:hover>div{
+    display: inline-block;
+}
+
+img.stadiumImg{
+    width: 90%;
 }

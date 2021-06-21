@@ -44,7 +44,7 @@ export default function UserPage(props){
         <div className="user-container">
             <UserHeader user={props.user} handleLogout={props.handleLogout}/>
             <div className="body">
-                <h1 className="welcome">Welcome <u>{props.user.username}</u></h1>
+                <h1 className="welcome">Welcome <u className="username">{props.user.username}</u></h1>
                 <button className="hideMatches" onClick={handleHideE}>Matches</button>
                 {matchDisplay ?
                     <div className="matches">

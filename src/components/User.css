@@ -17,8 +17,10 @@ h1.welcome{
 /* userheaders */
 .umain-header {
     background: radial-gradient(rgb(112, 109, 109), #111); 
+    /* background: url('https://theawayend.co/wp-content/uploads/2018/09/epl-top-banner_new.png')center no-repeat ; */
     padding: 30px;
     height: 200px;
+    width: 100%;
     text-align: center;
     position: relative;
     top: -180px;
