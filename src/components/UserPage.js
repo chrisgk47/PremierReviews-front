@@ -9,9 +9,10 @@ export default function UserPage(props){
     const [teams, setTeams] = useState([])
     const [matches, setMatches] = useState([])
     const [display, setDisplay] = useState(false)
-    const [matchDisplay, setMatchDisplay] = useState(true)
-    const [teamDisplay, setTeamDisplay] = useState(false)
-   
+    const [matchDisplay, setMatchDisplay] = useState(false)
+    const [teamDisplay, setTeamDisplay] = useState(true)
+    const [newsDisplay, setNewsDisplay] = useState(false)
+
     useEffect(() => {
         fetch('http://localhost:3001/matches')
         .then(res => res.json())
@@ -38,6 +39,10 @@ export default function UserPage(props){
     function handleHideE(){
         let newBoolean = !matchDisplay
         setMatchDisplay(newBoolean)
+    }
+    function handleNews(){
+        let newBoolean = !newsDisplay
+        setNewsDisplay(newBoolean)
     }
    
     return (
@@ -76,6 +81,48 @@ export default function UserPage(props){
                                 teams={teams}
                                 isLoggedIn={props.isLoggedIn}
                             />
+                    </div>
+                : null}
+                <button className="hideNews" onClick={handleNews}>News</button>
+                { newsDisplay ?
+                    <div className="news">
+                        <iframe 
+                            width="550" 
+                            height="434" 
+                            src="https://www.youtube.com/embed/2l5OxNAhPWE" 
+                            title="News1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <br/>
+                        <iframe 
+                            width="550" 
+                            height="434" 
+                            src="https://www.youtube.com/embed/C1N_au09k9c" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <iframe 
+                            width="566" 
+                            height="443" 
+                            src="https://www.youtube.com/embed/VK3SusEh10o" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                        <iframe 
+                            width="550" 
+                            height="434" 
+                            src="https://www.youtube.com/embed/6r4gy9r_IKk" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 : null}
             </div>

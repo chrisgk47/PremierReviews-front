@@ -1,18 +1,28 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import UserHeader from './UserHeader'
 import TeamReviews from './TeamReviews'
 import axios from 'axios'
+import zero from '../assets/0-stars.png'
+import one from '../assets/1-stars.png'
+import two from '../assets/2-stars.png'
+import three from '../assets/3-stars.png'
+import four from '../assets/4-stars.png'
+import five from '../assets/5-stars.png'
+
+const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 
 export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     const location = useLocation()
+    const history = useHistory()
     console.log(user)
     const [reviews, setReviews] = useState([])
     const [display, setDisplay] = useState(true)
     const [formData, setFormData] = useState({title: "", description: "", likes: 0, author: ""})
     const [pdisplay, setPDisplay] = useState(true)
+    
+   console.log(location.state.params)
 
-   
     useEffect(() => {
         setReviews(location.state.params.reviews)
     }, [location.state.params.reviews])
@@ -33,25 +43,30 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
 
     function handleSubmit(event){
         event.preventDefault()
-        const { title, description } = formData
+        const { title, description, score } = formData
 
         let review = {
             title: title,
             description: description,
             likes: 0,
+            score: score,
             author: user.email,
             team_id: location.state.params.id,
             user_id: user.id
         }
+        console.log(review)
 
         axios.post(`http://localhost:3001/reviews`, { review })
         .then(res => {
-            console.log(res.data)
-            console.log(event.target)
             reviews.push(res.data)
         })
         event.target.reset()
     }
+
+    function generateRatingElement(){
+          return <img src={imgMapper[location.state.params.average_score]} alt={location.state.params.average_score} />
+      }
+
   
     return(
         <div className="teamDetail" key={location.state.params.id}>
@@ -73,6 +88,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                 <a className="jerseyshop" href={`https://www.uksoccershop.com/football-shirts/english-premier-league?gclid=CjwKCAjwq7aGBhADEiwA6uGZp-0Ys3K_zYVEhqzUgKjTMOeX01e3_PEz1BqjpH0JhpU0ST9wpju-vBoCedsQAvD_BwE`}>
                     <img className="jersey" src={location.state.params.jersey} alt={location.state.params.name}/>
                 </a>
+                <h3 className="avg">Average Rating: <br/>{generateRatingElement()}</h3>
                <div className="descriptionDiv"><br/>
                 <button className="descriptionHide" onClick={handleHideD}>Show/Hide Description</button><br/><br/>
                     {pdisplay ? 
@@ -100,6 +116,20 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                             value={ formData.title }
                             onChange={ handleChange }
                         />
+                        <select 
+                            className="scoreForm" 
+                            placeholder="Choose a Score"
+                            name="score"
+                            value={ formData.score }
+                            onChange={ handleChange }
+                        >   
+                            <option>Select a ⭐️ Rating</option>
+                            <option value={1}>⭐️</option>
+                            <option value={2}>⭐️⭐️</option>
+                            <option value={3}>⭐️⭐️⭐️</option>
+                            <option value={4}>⭐️⭐️⭐️⭐️</option>
+                            <option value={5}>⭐️⭐️⭐️⭐️</option>
+                        </select>
                         <input
                             className="description"
                             placeholder="Write your review"

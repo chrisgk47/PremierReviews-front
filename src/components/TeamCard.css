@@ -280,3 +280,16 @@ a.stadium:hover>div{
 img.stadiumImg{
     width: 90%;
 }
+
+h3.avg {
+    color: #e9d2f8;
+}
+
+select.scoreForm{
+    height: 50px;
+    font-size: 40px;
+}
+option {
+    width: 50px;
+    font-size: 40px;
+}

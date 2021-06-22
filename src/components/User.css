@@ -114,6 +114,31 @@ h1.welcome{
     font-size: 30px;
     background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
   }
+  button.hideNews {
+    border-radius: 20px;
+    position: relative;
+    top: -100px;
+    left: 100px;
+    color: #efefef;
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    background: radial-gradient(rgb(112, 109, 109), rgb(34, 5, 48)); 
+  }
+  .news{
+    position: relative;
+    top: -80px;
+    color: white;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-row-gap: 5rem;
+    grid-column-gap: 2rem;
+    width: 100%;
+    height: 450px;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
 
   button.hideReviews {
     position: relative;
@@ -164,14 +189,14 @@ h1.welcome{
   
   .matches{
     position: relative;
-    top: -100px;
+    top: -90px;
     color: white;
     display: flex;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-row-gap: 5rem;
     grid-column-gap: 5rem;
     width: 100%;
-    height: 550px;
+    height: 520px;
     overflow: scroll;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -194,6 +219,11 @@ h1.welcome{
     max-height: 300px;
     max-width: 250px;
     position: relative;
+    transition: transform .2s;
+  }
+
+  img.jersey:hover {
+    transform: scale(1.5);
   }
 
   h1.game {
