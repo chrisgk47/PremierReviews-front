@@ -65,7 +65,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                 <h1 className="team-name">{location.state.params.name}</h1>
                 <a className="stadium" href={`${location.state.params.stadium_img}/preview`} ><u>Stadium:</u> {location.state.params.stadium}
                     <div className="stadium_img">
-                        <img className="stadiumImg" src={location.state.params.stadium_img} />
+                        <img className="stadiumImg"  alt={location.state.params.name}src={location.state.params.stadium_img} />
                     </div>
                 </a><br/><br/>
                 <a className="youtube" href={`http://${location.state.params.youtube}`}>Youtube</a>
