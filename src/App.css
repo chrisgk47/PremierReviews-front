@@ -152,8 +152,14 @@ form.login-form {
   font-size: 40px;
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 450px;
+  border-radius: 20px;
+}
+form.login-form:hover {
+  background: radial-gradient(rgb(112, 109, 109), #111); 
+  color: #efefef;
+  border: 5px solid #c5c1c5;
 }
 
 form.signup-form {
@@ -162,6 +168,11 @@ form.signup-form {
   margin-right: auto;
   width: 700px;
   height: 700px;;
+}
+form.signup-form:hover {
+  background: radial-gradient(rgb(112, 109, 109), #111); 
+  color: #efefef;
+  border: 5px solid #c5c1c5;
 }
 button.Signup-Btn {
   border-radius: 20px;

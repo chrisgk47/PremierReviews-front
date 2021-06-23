@@ -51,7 +51,7 @@ export default function UserReviews(props){
                         <h2 className="title"><u>{userReview.title}</u></h2>
                         <p className="description">{userReview.description}</p>
                         <h3 className="likes">{userReview.likes} Likes</h3>
-                        <h3 className="score">Average Score: <br/>{generateRatingElement(userReview)}</h3>
+                        <h3 className="score"> Rating: <br/>{generateRatingElement(userReview)}</h3>
                         <h3 className="author">By: {userReview.author}</h3>
                  </div>
             ))}
