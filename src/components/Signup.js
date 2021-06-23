@@ -19,7 +19,8 @@ export default function Signup({user, setUser, setIsLoggedIn, isLoggedIn, errors
             username: username,
             email: email,
             password: password,
-            password_confirmation: password_confirmation
+            password_confirmation: password_confirmation,
+            profile_img: ""
         }
 
         axios.post(`http://localhost:3001/users`, { user }, { withCredentials: true })

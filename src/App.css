@@ -1,7 +1,7 @@
 .App {
   background: radial-gradient(rgb(112, 109, 109), #111); 
-  height: 220vh;
-  max-height: 220vh;
+  height: 250vh;
+  max-height: 250vh;
 }
 /* Animations*/
 @keyframes slideInFromLeft {

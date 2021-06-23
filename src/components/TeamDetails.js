@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation, useHistory } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import UserHeader from './UserHeader'
 import TeamReviews from './TeamReviews'
 import axios from 'axios'
@@ -14,7 +14,6 @@ const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 
 export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
     const location = useLocation()
-    const history = useHistory()
     console.log(user)
     const [reviews, setReviews] = useState([])
     const [display, setDisplay] = useState(true)

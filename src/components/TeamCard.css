@@ -5,7 +5,7 @@
 
 .team-cont {
     position: relative;
-    top: -80px;
+    top: -150px;
     display: grid;
     overflow: scroll;
     overflow-x: hidden;

@@ -12,9 +12,11 @@ export default function Team(props){
         .then(setTeams)
     }, [])
 
+    const sortedTeams = [].concat(teams).sort((a, b) => a.name > b.name ? 1 : -1)
+
     return (
         <div className="team-cont">
-            {teams.map((team) => (
+            {sortedTeams.map((team) => (
                 <TeamCard 
                     key={team.id}
                     team={team}

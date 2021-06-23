@@ -49,8 +49,15 @@ export default function UserPage(props){
         <div className="user-container">
             <UserHeader user={props.user} handleLogout={props.handleLogout}/>
             <div className="body">
-                <h1 className="welcome">Welcome <u className="username">{props.user.username}</u></h1>
-                <button className="hideMatches" onClick={handleHideE}>Matches</button>
+                <div className="userNav">
+                    <img className="profile-img" src={props.user.profile_img} alt={props.user.username}/>
+                    <h1 className="welcome">Welcome <u className="username">{props.user.username}</u></h1>
+                    <button className="hideMatches" onClick={handleHideE}>Matches</button>
+                    <button className="hideTeams" onClick={handleHideT}>Teams</button>
+                    <button className="hideReviews" onClick={handleHide}>My Reviews</button>
+                    <button className="hideNews" onClick={handleNews}>News</button>
+                </div>
+                
                 {matchDisplay ?
                     <div className="matches">
                         {matches.map(match => {
@@ -66,14 +73,11 @@ export default function UserPage(props){
                         })} 
                     </div>
                 : null}
-                <button className="hideTeams" onClick={handleHideT}>Teams</button>
                 { teamDisplay ?
                     <div className="teams">
                         <Teams teams={teams} user={props.user} />
                     </div>
                 : null}
-
-                <button className="hideReviews" onClick={handleHide}>My Reviews</button>
                 { display ?
                     <div className="myReviews">
                             <UserReviews  
@@ -83,7 +87,6 @@ export default function UserPage(props){
                             />
                     </div>
                 : null}
-                <button className="hideNews" onClick={handleNews}>News</button>
                 { newsDisplay ?
                     <div className="news">
                         <iframe 
@@ -93,7 +96,7 @@ export default function UserPage(props){
                             title="News1" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                         <br/>
                         <iframe 
@@ -103,7 +106,7 @@ export default function UserPage(props){
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                         <iframe 
                             width="566" 
@@ -112,7 +115,7 @@ export default function UserPage(props){
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                         <iframe 
                             width="550" 
@@ -121,7 +124,7 @@ export default function UserPage(props){
                             title="YouTube video player" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                     </div>
                 : null}
