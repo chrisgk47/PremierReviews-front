@@ -21,7 +21,7 @@ export default function TeamCard({team}){
       }
 
     function handleTeamClick(){
-        history.push(`teams/${team.id}`, {params: team})
+        history.push(`teams/${team.slug}`, {params: team})
     }
 
     return (

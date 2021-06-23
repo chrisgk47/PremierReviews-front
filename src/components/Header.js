@@ -19,7 +19,7 @@ const Header = (props) => {
                         </a>
                     </li>
                     <li className="Github-Link">
-                        <a href='https://github.com/chrisgk47/Premier-Reviews-Front'>
+                        <a href='https://github.com/chrisgk47/PremierReviews-front'>
                             <img
                                 className="github-logo"
                                 src="https://cdn.iconscout.com/icon/free/png-256/github-163-761603.png"

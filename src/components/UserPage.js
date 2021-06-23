@@ -12,6 +12,7 @@ export default function UserPage(props){
     const [matchDisplay, setMatchDisplay] = useState(false)
     const [teamDisplay, setTeamDisplay] = useState(true)
     const [newsDisplay, setNewsDisplay] = useState(false)
+   
 
     useEffect(() => {
         fetch('http://localhost:3001/matches')
@@ -44,7 +45,7 @@ export default function UserPage(props){
         let newBoolean = !newsDisplay
         setNewsDisplay(newBoolean)
     }
-   
+
     return (
         <div className="user-container">
             <UserHeader user={props.user} handleLogout={props.handleLogout}/>

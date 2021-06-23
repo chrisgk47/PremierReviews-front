@@ -7,7 +7,7 @@ import Signup from './components/Signup'
 import Teams from './components/Teams'
 import TeamDetails from './components/TeamDetails'
 import About from './components/About'
-
+import Clips from './components/Clips'
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -64,7 +64,6 @@ export default function App() {
               />
           </Route>
           <Route exact path='/user'>
-            
               <UserPage
                   user={user}
                   setUser={setUser}
@@ -75,7 +74,6 @@ export default function App() {
                   setErrors={setErrors}
                   handleLogout={handleLogout}
               />
-            
           </Route>
           <Route exact path='/signup'>
               <Signup
@@ -90,14 +88,15 @@ export default function App() {
               />
           </Route>
           <Route exact path='/teams'>
-          {/* {isLoggedIn && */}
               <Teams  
-                  url={url}
+                  user={user}
+                  setUser={setUser}
+                  loggedInStatus={isLoggedIn}
+                  isLoggedIn={isLoggedIn}
+                  setIsLoggedIn={setIsLoggedIn}
               />
-              {/* } */}
           </Route>
           <Route exact path="/teams/:id">
-          {/* {isLoggedIn && */}
               <TeamDetails
                   user={user}
                   setUser={setUser}
@@ -105,11 +104,16 @@ export default function App() {
                   isLoggedIn={isLoggedIn}
                   setIsLoggedIn={setIsLoggedIn}
               />
-              {/* } */}
           </Route>
-         
-         
-          
+          <Route exact path="/clips">
+            <Clips
+              user={user}
+              setUser={setUser}
+              loggedInStatus={isLoggedIn}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
+            />
+          </Route>
         </Switch>
       </div>
     </div>

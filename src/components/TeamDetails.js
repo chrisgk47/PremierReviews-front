@@ -64,9 +64,8 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
 
     function generateRatingElement(){
           return <img src={imgMapper[location.state.params.average_score]} alt={location.state.params.average_score} />
-      }
+    }
 
-  
     return(
         <div className="teamDetail" key={location.state.params.id}>
             <UserHeader />
