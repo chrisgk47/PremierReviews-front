@@ -126,7 +126,7 @@ export default function TeamDetails({team, user, isLoggedIn, LoggedInStatus}){
                             <option value={2}>⭐️⭐️</option>
                             <option value={3}>⭐️⭐️⭐️</option>
                             <option value={4}>⭐️⭐️⭐️⭐️</option>
-                            <option value={5}>⭐️⭐️⭐️⭐️</option>
+                            <option value={5}>⭐️⭐️⭐️⭐️⭐️</option>
                         </select>
                         <input
                             className="description"
